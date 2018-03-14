@@ -1,0 +1,32 @@
+{
+  "extends": "tslint:all",
+  "rules": {
+    "object-literal-sort-keys": false,
+    "member-ordering": false,
+    "no-default-export": false,
+    "only-arrow-functions": false,
+    "completed-docs": false,
+    "no-inferrable-types": false,
+    "comment-format": false,
+    "no-null-keyword": false,
+    "no-parameter-properties": false,
+    "strict-boolean-expressions": false,
+    "ordered-imports": false,
+    "one-variable-per-declaration": false,
+    "newline-before-return": false,
+    "prefer-function-over-method": false,
+    "no-magic-numbers": [true, -1, 0, 1, 2, 10],
+    "no-shadowed-variable": false,
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "never"
+    }],
+    "no-empty": false
+  },
+  "jsRules": {
+    "max-line-length": {
+      "options": [120]
+    }
+  }
+}
