@@ -1,0 +1,157 @@
+@import "settings";
+
+/** Container **/
+
+@mixin container($gutter-width: $grid-gutter-width) {
+    display: block;
+    max-width: $max-width-layout - $gutter-width;
+    margin-left: auto;
+	margin-right: auto;
+	padding-left: $gutter-width/2;
+	padding-right: $gutter-width/2;
+}
+@mixin container-fluid() {
+	max-width: 100%;
+}
+
+/** Row **/
+
+@mixin row() {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+@mixin row-gutter($number) {
+	margin-left: -($number/2);
+	margin-right: -($number/2);
+}
+
+/** Column **/
+
+@mixin column-row() {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/** Columns
+
+    $columns: columns count, default: $grid-columns
+	$column: count of cells, defaul: 1
+
+	@return { Number }
+**/
+@function column-width($columns: $grid-columns, $column: 1){
+ 	@return 100/$columns*$column;
+}
+@mixin columns($columns: $grid-columns, $column: 1) {
+    $width: column-width($columns, $column) * 1%;
+    flex: 0 0 $width;
+    max-width: $width;
+}
+
+@mixin columns-offset($columns: $grid-columns, $column: 1) {
+	margin-left: column-width($columns, $column) * 1%;
+}
+
+// TODO column gutter
+@mixin columns-gutter($number) {
+	padding-left: $number/2 * 1px;
+	padding-right: $number/2 * 1px;
+}
+
+/** Media **/
+
+@mixin small-up() {
+    @media #{$small-up} {
+        @content;
+    }
+}
+
+@mixin small-only() {
+    @media #{$small-only} {
+        @content;
+    }
+}
+
+@mixin medium-up() {
+    @media #{map-get($media-strings-up, 'medium')} {
+        @content;
+    }
+}
+
+@mixin medium-only() {
+    @media #{$medium-only} {
+        @content;
+    }
+}
+
+@mixin large-up() {
+    @media #{map-get($media-strings-up, 'large')} {
+        @content;
+    }
+}
+@mixin large-only() {
+    @media #{$large-only} {
+        @content;
+    }
+}
+
+@mixin xlarge-up() {
+    @media #{$xlarge-up} {
+        @content;
+    }
+}
+
+@mixin xlarge-only() {
+    @media #{$xlarge-only} {
+        @content;
+    }
+}
+
+@mixin xxlarge-up() {
+    @media #{xxlarge-up} {
+        @content;
+    }
+}
+
+@mixin xxlarge-only() {
+    @media #{$xxlarge-only} {
+        @content;
+    }
+}
+
+@mixin xsmall() {
+    @media #{map-get($media-strings, 'xsmall')} {
+        @content;
+    }
+}
+
+@mixin small() {
+    @media #{map-get($media-strings, 'small')} {
+        @content;
+    }
+}
+
+@mixin medium() {
+    @media #{map-get($media-strings, 'medium')} {
+        @content;
+    }
+}
+
+@mixin large() {
+    @media #{map-get($media-strings, 'large')} {
+        @content;
+    }
+}
+
+@mixin xlarge() {
+    @media #{map-get($media-strings, 'xlarge')} {
+        @content;
+    }
+}
+
+@mixin xxlarge() {
+    @media #{map-get($media-strings, 'xxlarge')} {
+        @content;
+    }
+}

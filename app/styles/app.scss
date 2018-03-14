@@ -1,0 +1,18 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/fonts";
+@import "normalize-scss/sass/normalize/import-now";
+/**
+  Import or just write your settings here
+**/
+$max-width-layout: 1024px;
+/**
+  End of settings
+**/
+
+@import "grid/grid";
+@import "helpers/sprite";
+@import 'utilityClasses/margins';
+@import 'utilityClasses/paddings';
+@import "layout";
+@import '../blocks/**/*';
