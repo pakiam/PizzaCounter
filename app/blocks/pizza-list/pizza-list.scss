@@ -1,0 +1,65 @@
+.b-pizza-list{
+	display: block;
+}
+
+.b-pizza-list__item{
+  $fz: (16px, 20px) (16px, 20px) (16px, 20px);
+  @include row;
+  @include font-size($fz);
+  @include padding-y(15px);
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  &:first-of-type{
+    border-top: 1px solid rgba(0,0,0,.15);
+  }
+}
+
+.b-pizza-list__item-body{
+  @include columns(12, 10);
+  @include row;
+  align-items: center;
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.b-pizza-list__item-img{
+  @include columns(10, 2);
+  @include padding-x(10px);
+}
+
+.b-pizza-list__item-name{
+  @include columns(10, 3);
+  @include padding-x(10px);
+  padding-right: 30px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.b-pizza-list__item-desc{
+  @include columns(10, 3);
+  @include padding-x(10px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.b-pizza-list__item-counter{
+  @include columns(10, 2);
+  @include padding-x(10px);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.b-pizza-list__item-action{
+  @include columns(12, 2);
+  @include padding-x(10px);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.b-pizza-list__item-action-reset{
+  display: none;
+}

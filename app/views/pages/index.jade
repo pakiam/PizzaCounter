@@ -1,33 +1,22 @@
 extends ../layouts/layout-default
 include ../../blocks/icon/icon
+include ../../blocks/pizza-list/pizza-list
+include ../../blocks/progress-bar/progress-bar
 
 block head
-	- var pageTitle = 'Project Template';
+  - var pageTitle = 'Pizza counter';
 
 block content
-	| allo
-	.l-container
-		.l-custom-row
-			.l-col-1
-				| I`am col-1
-			.l-col-7
-				| I`am col-7
-				.l-custom-row
-					.l-col-14-2
-						| I`m col 2 in 14-cols grid
-					.l-col-14-2
-						| I`m col 2 in 14-cols grid
-					.l-col-14-2
-						| I`m col 2 in 14-cols grid
-					.l-col-14-2
-						| I`m col 2 in 14-cols grid
-					.l-col-14-2
-						| I`m col 2 in 14-cols grid
-					.l-col-14-2
-						| I`m col 2 in 14-cols grid
-					.l-col-14-2
-						| I`m col 2 in 14-cols grid
-	.sprite-2
-		+icon('twitter-logo-silhouette', true).logo
-		+icon('vk-social-network-logo', true).logo
-	.sprite-1-test
+  .l-container
+    .l-row
+      .l-product-list
+        +pizza-list()
+      .l-orders
+        .l-orders__order
+          .l-orders__order-number №3208957205790
+          .l-orders__order-status
+            +progress-bar(40)
+        .l-orders__order
+          .l-orders__order-number №3208957205790
+          .l-orders__order-status
+            +progress-bar(100)

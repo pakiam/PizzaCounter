@@ -5,13 +5,9 @@
 
 
 // Set element size
-@mixin size($width, $height){
+@mixin size($width, $height: $width){
 	width: $width;
-	@if $height {
-        height: $height;
-    } @else {
-        height: $width;
-    }
+	height: $height;
 
 }
 

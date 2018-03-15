@@ -1,11 +1,25 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/scripts",
-    "noImplicitAny": true,
-    "module": "es6",
+    "baseUrl": "./app/scripts/",
+    "outDir": "./dist/assets/scripts/",
+    "module": "commonjs",
+    "strict": true,
+    "strictNullChecks": false,
     "target": "es5",
-    "jsx": "react",
     "allowJs": true,
-    "sourceMap": true,
-  }
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom", "es6", "dom.iterable", "es2015"
+    ]
+  },
+  "include": [
+    "./app/scripts/**/*"
+    ],
+  "exclude": [
+    "node_modules"
+  ]
 }

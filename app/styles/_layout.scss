@@ -3,7 +3,13 @@
 }
 
 body {
-	/** body styles */
+  /** body styles */
+  @include font-family('Roboto');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 16px;
 }
 
 img {
@@ -24,6 +30,10 @@ img {
 
 .l-row{
     @include row;
+}
+
+.hidden {
+  @include hidden;
 }
 
 // HEADINGS
@@ -57,39 +67,27 @@ h6 {
     @include font-size($fz);
 }
 
-
-.l-custom-row{
-	@include row;
-	@include row-gutter(30);
-}
-.l-col-1{
-	@include columns(12, 1);
-	background-color: green;
-	@include columns-gutter(30);
-	@include columns-offset(12,2);
-}
-.l-col-7{
-	@include columns(12,7);
-	background-color: tomato;
-	@include columns-gutter(30);
-}
-.l-col-14-2{
-	@include columns(14, 2);
-	background-color: purple;
-	@include columns-gutter(30)
-}
-.l-col-4{
-	@include columns(12,4);
-	background-color: blue;
+// Products list
+.l-product-list{
+  @include columns(12, 12);
+  margin-bottom: 88px;
 }
 
+// Orders
+.l-orders{
+  @include columns(12, 6);
+}
 
-.sprite-1-test{
-	$twitter: map-get($icons, twitter-logo-silhouette);
-	$sprite: map-get($icons, sprite);
-	background-image: url(map-get($sprite, svgPath));
-    background-position: map-get($twitter, backgroundX) map-get($twitter, backgroundX);
-	fill: tomato;
-	width: 100px;
-	height: 100px;
+.l-orders__order{
+  @include row;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+.l-orders__order-number{
+  @include columns(6, 2.8);
+}
+
+.l-orders__order-status{
+  @include columns(6, 3.2);
 }

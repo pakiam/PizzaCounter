@@ -1,0 +1,6 @@
+mixin progress-bar(length)
+  +b.b-progress-bar.js-progress-bar&attributes(attributes)
+    block
+    +e.__body.js-progress-bar-body(data-progress="#{length}" role="progressbar" aria-valuenow="#{length}"
+  aria-valuemin="0" aria-valuemax="100")
+    +e.__progress.js-progress-bar-progress #{length}%

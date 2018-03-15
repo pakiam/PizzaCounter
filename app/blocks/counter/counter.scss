@@ -1,0 +1,10 @@
+.b-counter{
+  @include row;
+  align-items: center;
+}
+
+.b-counter__number{
+  @include padding-x(5px);
+  width: 42px;
+  text-align: center;
+}

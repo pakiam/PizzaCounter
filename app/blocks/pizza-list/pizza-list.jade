@@ -1,0 +1,20 @@
+include ../counter/counter
+include ../button/button
+mixin pizza-list()
+  - var pizzas = [{img: './assets/images/pizza.png', name: 'Пицца Пеперони на тонком тесте', description: 'Пеперони, моцарелла, томаты, зелень'}, {img: './assets/images/pizza.png', name: 'Пицца Пеперони на тонком тесте', description: 'Пеперони, моцарелла, томаты, зелень'}, {img: './assets/images/pizza.png', name: 'Пицца Пеперони на тонком тесте', description: 'Пеперони, моцарелла, томаты, зелень'}]
+  +b.b-pizza-list&attributes(attributes)
+    block
+    for item in pizzas
+      +e.__item.js-product-item
+        +e.__item-body.js-product-item-body
+          +e.__item-img
+            img(src="#{item.img}", alt="")
+          +e.__item-name= item.name
+          +e.__item-desc= item.description
+          +e.__item-counter.js-product-counter
+            +counter()
+        +e.__item-action
+          +e.__item-action-remove
+            +button("Удалить").c-button--counter-remove.js-product-remove
+          +e.__item-action-reset
+            +button("Вернуть").c-button--counter-reset.js-product-reset

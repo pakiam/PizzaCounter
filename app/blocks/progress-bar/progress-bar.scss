@@ -1,0 +1,25 @@
+.b-progress-bar{
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  box-shadow: inset 0px 0px 0px 1px map-get($colors, 'grey' );
+}
+
+.b-progress-bar__body{
+  height: 26px;
+  border-radius: 12px;
+  width: 0;
+  background-color: map-get($colors, 'counterColor' );
+  transition: width .3s ease-in-out;
+}
+
+.b-progress-bar__progress {
+  position: absolute;
+  left: 0;
+  width: 38px;
+  bottom: -22px;
+  display: inline-block;
+  transition: left .3s ease-in-out;
+  font-size: 13px;
+  font-weight: 700;
+}

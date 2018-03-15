@@ -90,7 +90,7 @@
     "spritesmith-dir-checker": "^1.0.0",
     "spritesmith-stylus-retina-template": "^1.0.0",
     "svg4everybody": "^2.0.0",
-    "ts-loader": "^4.0.1",
+    "ts-loader": "^3.5.0",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2",
     "webpack": "^1.12.9",

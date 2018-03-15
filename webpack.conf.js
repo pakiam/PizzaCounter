@@ -6,7 +6,7 @@ export default function makeWebpackConfig({
   debug = false
 }) {
   return {
-    entry: path.resolve('./app/scripts/app.ts'),
+    entry: path.resolve('./app/scripts/app'),
     watch,
     debug,
     bail: false,
@@ -21,12 +21,12 @@ export default function makeWebpackConfig({
       modulesDirectories: [
         'node_modules'
       ],
-      extensions: ['.ts', '']
+      extensions: ['.ts', '.tsx', '.js']
     },
     module: {
-      rules: [
+      loaders: [
         {
-          test: /\.ts$/,
+          test: /\.tsx?$/,
           loader: 'ts-loader',
           exclude: /node_modules/
         }

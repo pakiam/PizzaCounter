@@ -1,0 +1,10 @@
+include ../button/button
+mixin counter()
+  +b.b-counter&attributes(attributes)
+    block
+    +e.__dec
+      +button().c-button--counter.c-button--counter-dec.js-product-dec
+    +e.__number.js-product-count 1
+    +e.__inc
+      +button().c-button--counter.c-button--counter-inc.js-product-inc
+
