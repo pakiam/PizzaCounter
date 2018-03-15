@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';
 
 export default function makeWebpackConfig({
   watch = true,
@@ -31,6 +32,18 @@ export default function makeWebpackConfig({
           exclude: /node_modules/
         }
       ]
-    }
+    },
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+        }
+      })
+    ].concat(debug ? [
+      new webpack.HotModuleReplacementPlugin()
+    ] : [
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}, output: {comments: false}})
+    ])
   };
 }
