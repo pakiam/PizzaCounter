@@ -1,6 +1,3 @@
-console.log('I`m Typescript');
-console.log('I`m Typescript');
-
 import {Cart} from './Cart/Cart';
 import {ProgressBar} from './ProgressBar/ProgressBar';
 
