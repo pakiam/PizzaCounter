@@ -5,6 +5,7 @@ mixin pizza-list()
   +b.b-pizza-list&attributes(attributes)
     block
     for item in pizzas
+      //- Pizza item
       +e.__item.js-product-item
         +e.__item-body.js-product-item-body
           +e.__item-img
