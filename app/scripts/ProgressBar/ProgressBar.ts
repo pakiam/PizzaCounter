@@ -1,9 +1,27 @@
+/**
+ * Constants
+ *
+ */
 const
   NODE_PROGRESS_BAR_BODY = '.js-progress-bar-body',
   NODE_PROGRESS_BAR_LABEL = '.js-progress-bar-progress',
   LABEL_WIDTH = 38;
 
-export class ProgressBar {
+/**
+ * Progressbar Interface
+ */
+ interface ProgressBarInterface {
+   body: HTMLElement;
+   label: HTMLElement;
+   progress: string;
+
+   setProgress(value: number): void;
+ }
+
+/**
+ * Progressbar Class
+ */
+export class ProgressBar implements ProgressBarInterface {
   body: HTMLElement;
   label: HTMLElement;
   progress: string = '0';

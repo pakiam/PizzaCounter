@@ -1,6 +1,4 @@
-/**
- * Cart item Class
- */
+import {Counter} from '../Counter';
 
 /**
  * Constants with classes
@@ -12,13 +10,31 @@ const
   NODE_REMOVE_BUTTON = '.js-product-remove',
   NODE_RESET_BUTTON = '.js-product-reset';
 
-import {Counter} from '../Counter';
+/**
+ * CartItem interface
+ */
 
-export class CartItem {
+interface CartItemInterface {
+  count: number;
+  node: HTMLElement;
+  nodeBody: HTMLElement;
+  removed: boolean;
+  nodeCounter: Counter;
+  removeButton: HTMLElement;
+  resetButton: HTMLElement;
+
+  onRemove(): void;
+  onReset(): void;
+}
+
+/**
+ * Cart item Class
+ */
+export class CartItem implements CartItemInterface {
   count: number = 1;
   node: HTMLElement;
   nodeBody: HTMLElement;
-  removed: Boolean = false;
+  removed: boolean = false;
 
   nodeCounter: Counter;
 

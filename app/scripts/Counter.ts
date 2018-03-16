@@ -1,10 +1,33 @@
+/**
+ * Constants
+ *
+ */
 const
   NODE = '.js-product-counter',
   NODE_INC_BUTTON = '.js-product-inc',
   NODE_DEC_BUTTON = '.js-product-dec',
   NODE_COUNT = '.js-product-count';
 
-export class Counter {
+/**
+ * Counter Interface
+ *
+ */
+interface CounterInterface {
+  node: HTMLElement; // counter node in HTML
+  decButton: HTMLElement; // decrement button
+  incButton: HTMLElement; // increment button
+  counter: HTMLElement; // HTML node with counter value
+  count: number; // value of counter
+
+  addQuantity(): void;
+  minusQuantity(): void;
+}
+
+/**
+ * Counter Class
+ *
+ */
+export class Counter implements CounterInterface {
   node: HTMLElement;
   count: number = 1;
   decButton: HTMLElement;
